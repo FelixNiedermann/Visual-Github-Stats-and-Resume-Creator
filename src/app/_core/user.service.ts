@@ -25,7 +25,21 @@ export class UserService {
   }
 
   getRepos(username: string) {
-    return this.http.get(`https://api.github.com/users/${username}/repos`);
+    return this.http.get(`https://api.github.com/users/${username}/repos?per_page=100`);
+  }
+
+  getRateLimit() {
+    return this.http.get(`https://api.github.com/rate_limit`);
+  }
+
+  getLang(languages_url: string) {
+    return this.http.get(languages_url);
+   /* var repos: any = [];
+    var languages: any = []
+    repos = this.getRepos(username);
+    repos.forEach((repo: { language_url: string; }) => {
+       return this.http.get(repo.language_url);
+    });*/
   }
   /*getUser(un: string) {
     
