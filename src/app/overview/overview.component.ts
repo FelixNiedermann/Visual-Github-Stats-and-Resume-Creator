@@ -9,7 +9,7 @@ import { User } from '../_types/user';
   styleUrls: ['./overview.component.css']
 })
 export class OverviewComponent implements OnInit {
-  username: string = 'FelixNiedermann';
+  username: string = '';
   user: any;
   repos: any = [];
   languages: any = [];
